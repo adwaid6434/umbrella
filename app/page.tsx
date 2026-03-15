@@ -4,6 +4,7 @@ import React from "react";
 import Hero from "@/components/Hero";
 import FeatureSection from "@/components/FeatureSection";
 import ProductShowcase from "@/components/ProductShowcase";
+import ContactSection from "@/components/ContactSection";
 
 import { Menu } from "lucide-react";
 import styles from "./page.module.css";
@@ -34,6 +35,7 @@ export default function Home() {
       <Hero />
       <FeatureSection />
       <ProductShowcase />
+      <ContactSection />
 
       {/* DECORATIVE STAR */}
       {/* <div className={styles.cornerStar}>✦</div> */}
