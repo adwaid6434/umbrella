@@ -1,18 +1,20 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image"; // 1. Import the Image component
+import Image from "next/image";
 
 export default function FeatureSection() {
+  const [imgError, setImgError] = useState(false);
+
   return (
     <section className="feature-section">
       <div className="feature-left">
-        {/* Text slides up from the bottom when scrolled into view */}
         <motion.h2
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }} // Triggers when 30% of it is visible
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }} // Smooth deceleration
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
         >
           FORM.
           <br />
@@ -31,15 +33,25 @@ export default function FeatureSection() {
       </div>
 
       <div className="feature-right">
-        {/* 2. Use the Image component */}
-        <Image
-          src="/model-umbrella.png"
-          alt="Model holding umbrella"
-          className="model-img"
-          width={800} // 3. Add expected width
-          height={1200} // 4. Add expected height
-          priority // 5. Optional: adds high priority if this is at the top of the page
-        />
+        {imgError ? (
+          <div
+            className="model-img image-placeholder"
+            style={{ width: 750, height: 1200 }}
+            title="Place model-umbrella.png in the public folder"
+          />
+        ) : (
+          <Image
+            src="/model-umbrella.png"
+            alt="Model holding umbrella"
+            className="model-img"
+            width={800}
+            height={1200}
+            sizes="(max-width: 900px) 100vw, 750px"
+            loading="lazy"
+            unoptimized
+            onError={() => setImgError(true)}
+          />
+        )}
       </div>
     </section>
   );

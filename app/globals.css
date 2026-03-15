@@ -260,3 +260,11 @@ body::after {
   width: 750px;
   height: auto;
 }
+
+/* Shown when image fails to load (e.g. file missing from public folder) */
+.image-placeholder {
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px dashed rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  flex-shrink: 0;
+}
