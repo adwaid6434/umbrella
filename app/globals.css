@@ -1,4 +1,6 @@
 /* RESET */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap");
 *,
 *::before,
 *::after {
@@ -37,26 +39,6 @@ body::after {
   opacity: 0.04;
   pointer-events: none;
   z-index: 50;
-}
-
-/* NAVBAR */
-.nav {
-  position: fixed; /* Changed from absolute */
-  top: 40px;
-  left: 80px;
-  right: 80px;
-  display: flex;
-  align-items: center;
-  z-index: 100; /* Increased to stay above all sections */
-}
-
-/* LOGO */
-.logo {
-  font-size: 20px;
-  font-weight: 300;
-  letter-spacing: 1.5px;
-  color: #888;
-  margin-right: 60px; /* Keeps links close, replaces flex: 1 */
 }
 
 /* NAV LINKS */
@@ -196,10 +178,12 @@ body::after {
     left: 40px;
     right: 40px;
   }
-
-  .logo {
-    margin-right: 0;
-    margin-bottom: 20px;
+  /* NAVBAR */
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
   }
 
   .nav-links {
