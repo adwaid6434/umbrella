@@ -114,12 +114,19 @@ body::after {
 .hero {
   display: flex;
 
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
 
   height: 100vh;
 
-  padding: 120px 80px;
+  padding: 140px 80px 80px;
+}
+
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
 }
 
 /* HERO LEFT */
