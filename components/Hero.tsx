@@ -55,11 +55,7 @@ export default function Hero() {
             }}
             transition={{
               duration: 1.2,
-              y: {
-                duration: 6,
-                repeat: Infinity,
-                ease: "easeInOut",
-              },
+              ease: "easeInOut",
             }}
           />
         )}

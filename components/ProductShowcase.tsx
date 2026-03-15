@@ -1,92 +1,36 @@
 "use client";
 
 import React from "react";
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import styles from "./ProductShowcase.module.css";
-const container: Variants = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.35,
-    },
-  },
-};
-
-const cardAnimation: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 60,
-    scale: 0.9,
-  },
-  show: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      duration: 0.8,
-      ease: "easeOut",
-    },
-  },
-};
-
-const imageAnimation: Variants = {
-  hidden: {
-    opacity: 0,
-    rotate: -8,
-    scale: 0.9,
-  },
-  show: {
-    opacity: 1,
-    rotate: 0,
-    scale: 1,
-    transition: {
-      duration: 0.9,
-      ease: "easeOut",
-    },
-  },
-};
-
-const textAnimation: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 40,
-  },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.8,
-      ease: "easeOut",
-    },
-  },
-};
 
 const ProductShowcase = () => {
   return (
-    <motion.section
-      className={styles.container}
-      variants={container}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.2 }}
-    >
+    <section className={styles.container}>
       {/* Header */}
       <nav className={styles.nav}>
         <span className={styles.logo}>ÆTHER.UMBRELLA.</span>
       </nav>
 
-      {/* Main Content */}
+      {/* MAIN */}
       <div className={styles.mainContent}>
         {/* PRODUCT CARD */}
         <motion.div
           className={styles.imageCard}
-          variants={cardAnimation}
-          whileHover={{ y: -8 }}
-          transition={{ type: "spring", stiffness: 200 }}
+          initial={{ opacity: 0, y: 80, scale: 0.9 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+          whileHover={{ y: -10 }}
         >
-          <motion.div variants={imageAnimation}>
+          <motion.div
+            initial={{ rotate: -8, opacity: 0 }}
+            whileInView={{ rotate: 0, opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            viewport={{ once: true }}
+          >
             <Image
               src="/umbrella.png"
               alt="The Aether Umbrella"
@@ -98,13 +42,17 @@ const ProductShowcase = () => {
           </motion.div>
         </motion.div>
 
-        {/* TEXT REVEAL */}
-        <motion.div variants={textAnimation}>
-          <h2 className={styles.seriesTitle}>
-            SERIES 01: <br />
-            <span>THE ÆTHER.</span>
-          </h2>
-        </motion.div>
+        {/* TITLE APPEARS AFTER PRODUCT */}
+        <motion.h2
+          className={styles.seriesTitle}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 0.5, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          SERIES 01: <br />
+          <span>THE ÆTHER.</span>
+        </motion.h2>
       </div>
 
       {/* Footer */}
@@ -136,7 +84,7 @@ const ProductShowcase = () => {
           </button>
         </div>
       </footer>
-    </motion.section>
+    </section>
   );
 };
 
