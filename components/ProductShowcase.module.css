@@ -3,21 +3,22 @@
   min-height: 100vh;
   width: 100%;
   background-color: #f7f7f7;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* padding: 40px; */
+
   padding: 30px 40px;
   overflow: hidden;
   color: #333;
 }
 
 /* NAV */
+
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 10;
 }
 
 .logo {
@@ -28,27 +29,24 @@
 }
 
 /* MAIN */
+
 .mainContent {
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex: 1;
+  gap: 120px;
   position: relative;
 }
 
+/* TITLE */
+
 .seriesTitle {
-  opacity: 0.45;
+  opacity: 0.5;
   font-family: serif;
   font-size: 5rem;
   line-height: 0.9;
   color: #b5b5b5;
-
-  position: absolute;
-  left: 8%;
-  top: 50%;
-  transform: translateY(-50%);
-
-  z-index: 5;
   pointer-events: none;
 }
 
@@ -57,11 +55,13 @@
 }
 
 /* PRODUCT CARD */
+
 .imageCard {
   width: 500px;
   height: 500px;
   background: white;
-  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.05);
+
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.06);
 
   display: flex;
   align-items: center;
@@ -69,43 +69,32 @@
 
   position: relative;
   z-index: 2;
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.imageCard:hover {
+  box-shadow: 0 60px 160px rgba(0, 0, 0, 0.1);
 }
 
 .productImg {
   width: 90%;
   height: auto;
-}
-
-/* BACKGROUND GHOSTS */
-.ghostBackground img {
-  position: absolute;
-  opacity: 0.1;
-  pointer-events: none;
-}
-
-.ghostLeft {
-  left: 10%;
-  top: 20%;
-  width: 300px;
-}
-
-.ghostRight {
-  right: 5%;
-  top: 20%;
-  height: 60%;
+  object-fit: contain;
 }
 
 /* FOOTER */
+
 .footer {
-  flex-shrink: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 10;
-  width: 100%;
 }
 
-/* CONTROL GROUPS */
+/* CONTROLS */
+
 .leftControls,
 .rightControls {
   display: flex;
@@ -114,6 +103,7 @@
 }
 
 /* BUTTONS */
+
 .iconBtn {
   border: 1px solid #e5e5e5;
   background: white;
@@ -128,14 +118,12 @@
   transition: all 0.25s ease;
 }
 
-/* Hover Highlight */
 .iconBtn:hover {
   border-color: #888;
   background: #f0f0f0;
   transform: translateY(-2px);
 }
 
-/* Active Button */
 .activeBtn {
   background: #333;
   border-color: #333;
@@ -143,13 +131,13 @@
 }
 
 /* PAGINATION */
+
 .pagination {
   display: flex;
   gap: 10px;
   margin-right: 10px;
 }
 
-/* DOTS */
 .dot {
   width: 7px;
   height: 7px;
@@ -171,6 +159,7 @@
 }
 
 /* CAPTION */
+
 .caption {
   font-size: 0.9rem;
   color: #777;
