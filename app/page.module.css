@@ -1,0 +1,76 @@
+.logo {
+  margin-right: 0;
+  margin-bottom: 20px;
+  color: #333;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 2px;
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+.nav {
+  /* position: absolute; */
+  position: relative;
+  top: 40px;
+  left: 80px;
+  right: 80px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  z-index: 100;
+}
+
+/* LEFT */
+
+.navLeft {
+  display: flex;
+  align-items: center;
+}
+
+/* CENTER LINKS */
+
+.navLinks {
+  display: flex;
+  gap: 40px;
+
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: #999;
+}
+
+.navLinks span {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.navLinks span:hover {
+  color: #555;
+}
+
+/* RIGHT MENU BUTTON */
+
+.menuButton {
+  display: flex;
+  align-items: center;
+
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  color: #888;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .nav {
+    left: 40px;
+    right: 40px;
+  }
+
+  .navLinks {
+    display: none;
+  }
+}

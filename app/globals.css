@@ -41,40 +41,6 @@ body::after {
   z-index: 50;
 }
 
-/* NAV LINKS */
-.nav-links {
-  display: flex;
-  gap: 40px;
-  font-size: 13px;
-  letter-spacing: 1px;
-  color: #999;
-}
-
-.nav-links span {
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.nav-links span:hover {
-  color: #555;
-}
-
-/* MENU ICON */
-.menu {
-  margin-left: auto;
-  width: 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  cursor: pointer;
-}
-
-.menu span {
-  height: 1px;
-  background: #888;
-  display: block;
-}
-
 /* HERO SECTION */
 .hero {
   display: flex;
