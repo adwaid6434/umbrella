@@ -16,7 +16,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata = {
-  title: "ÆTHER.UMBRELLA.",
+  title: "ÆTHER.UMBRELLA - by Adwaid",
   description: "The liquid glass shield. Zero permeability.",
 };
 
