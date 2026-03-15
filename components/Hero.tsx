@@ -1,25 +1,15 @@
-"use client";
+"use client"; // <-- This is required for Framer Motion!
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import MagneticButton from "./MagneticButton";
+
+// Create a motion-enabled Next.js Image component
+const MotionImage = motion(Image);
 
 export default function Hero() {
   return (
     <section className="hero">
-      <header className="nav">
-        <div className="logo">ÆTHER.UMBRELLA.</div>
-
-        <div className="nav-links">
-          <span>COLLECTION</span>
-          <span>TECHNOLOGY</span>
-        </div>
-
-        <div className="menu">
-          <span></span>
-          <span></span>
-        </div>
-      </header>
-
       <div className="hero-left">
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
@@ -37,9 +27,13 @@ export default function Hero() {
       </div>
 
       <div className="hero-right">
-        <motion.img
+        <MotionImage
           src="/umbrella.png"
+          alt="Aether Umbrella"
           className="umbrella"
+          width={750}
+          height={750}
+          priority
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{
             opacity: 1,
@@ -56,8 +50,6 @@ export default function Hero() {
           }}
         />
       </div>
-
-      <div className="corner-star">✦</div>
     </section>
   );
 }
