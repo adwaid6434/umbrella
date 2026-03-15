@@ -1,5 +1,4 @@
 /* RESET */
-
 *,
 *::before,
 *::after {
@@ -14,221 +13,173 @@ body {
 }
 
 /* BODY */
-
 body {
-  font-family: "Inter", sans-serif;
-
+  /* font-family: "Inter", sans-serif; */
+  font-family: var(--font-inter), sans-serif;
   color: #9a9a9a;
-
   background: radial-gradient(
-    circle at 70% 50%,
+    circle at 75% 50%,
     #ffffff 0%,
-    #f4f4f4 60%,
-    #efefef 100%
+    #f2f2f2 60%,
+    #e8e8e8 100%
   );
-
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
   overflow-x: hidden;
 }
 
 /* PREMIUM NOISE TEXTURE */
-
 body::after {
   content: "";
   position: fixed;
   inset: 0;
-
   background-image: url("/noise.png");
-  opacity: 0.03;
-
+  opacity: 0.04;
   pointer-events: none;
+  z-index: 50;
 }
 
 /* NAVBAR */
-
 .nav {
-  position: absolute;
-
+  position: fixed; /* Changed from absolute */
   top: 40px;
   left: 80px;
   right: 80px;
-
   display: flex;
   align-items: center;
+  z-index: 100; /* Increased to stay above all sections */
 }
 
 /* LOGO */
-
 .logo {
-  font-size: 22px;
-  letter-spacing: 1px;
-
-  color: #9a9a9a;
-
-  flex: 1;
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  color: #888;
+  margin-right: 60px; /* Keeps links close, replaces flex: 1 */
 }
 
 /* NAV LINKS */
-
 .nav-links {
   display: flex;
   gap: 40px;
-
-  font-size: 14px;
-
-  color: #b5b5b5;
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: #999;
 }
 
 .nav-links span {
   cursor: pointer;
-  transition: opacity 0.3s;
+  transition: color 0.3s ease;
 }
 
 .nav-links span:hover {
-  opacity: 0.6;
+  color: #555;
 }
 
 /* MENU ICON */
-
 .menu {
   margin-left: auto;
-
-  width: 24px;
-
+  width: 28px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
+  cursor: pointer;
 }
 
 .menu span {
   height: 1px;
-  background: #aaa;
-
+  background: #888;
   display: block;
 }
 
 /* HERO SECTION */
-
 .hero {
   display: flex;
-
-  align-items: flex-start;
+  align-items: center; /* Vertically centers the content */
   justify-content: space-between;
-
   height: 100vh;
-
-  padding: 140px 80px 80px;
-}
-
-.hero-right {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
+  padding: 0 80px; /* Removed massive top padding to allow exact centering */
+  position: relative;
 }
 
 /* HERO LEFT */
-
 .hero-left {
-  max-width: 650px;
+  max-width: 700px;
+  z-index: 2;
 }
 
 /* HERO TITLE */
-
 .hero-left h1 {
-  font-family: "Playfair Display", serif;
-
-  font-size: 110px;
-
-  line-height: 1;
-
+  /* font-family: "Playfair Display", serif; */
+  font-family: var(--font-playfair), serif;
+  font-size: 115px; /* Scaled up to match reference */
+  line-height: 0.95; /* Tighter line height for large elegant serif */
   letter-spacing: -2px;
-
   color: #9c9c9c;
-
-  font-weight: 500;
-
-  margin-bottom: 30px;
+  font-weight: 400; /* Thinner weight for elegance */
+  margin-bottom: 24px;
 }
 
 /* SUBTITLE */
-
 .sub {
-  font-size: 16px;
-
-  color: #b4b4b4;
-
-  margin-bottom: 40px;
+  font-size: 17px;
+  color: #a8a8a8;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  margin-bottom: 50px;
 }
 
 /* MAGNETIC BUTTON */
-
 .magnetic-btn {
-  padding: 14px 42px;
-
-  border-radius: 40px;
-
-  border: 1px solid #ddd;
-
-  background: white;
-
+  padding: 16px 48px;
+  border-radius: 50px;
+  border: 1px solid #d0d0d0;
+  background: transparent; /* Match reference image */
   cursor: pointer;
-
   font-size: 13px;
-
-  letter-spacing: 1px;
-
-  color: #9a9a9a;
-
+  letter-spacing: 1.5px;
+  color: #888;
   transition: all 0.3s ease;
 }
 
 .magnetic-btn:hover {
-  background: #f4f4f4;
+  background: rgba(0, 0, 0, 0.03);
+  color: #555;
 }
 
 /* HERO RIGHT */
-
 .hero-right {
   flex: 1;
-
   display: flex;
-  justify-content: center;
+  justify-content: flex-end; /* Pushes umbrella to the right */
   align-items: center;
 }
 
 /* UMBRELLA IMAGE */
-
 .umbrella {
-  width: 620px;
-
-  filter: drop-shadow(0px 40px 40px rgba(0, 0, 0, 0.15));
+  width: 750px; /* Increased scale to match reference */
+  filter: drop-shadow(0px 70px 80px rgba(0, 0, 0, 0.12))
+    drop-shadow(0px 20px 25px rgba(0, 0, 0, 0.08)); /* Ultra realistic double-shadow */
 }
 
 /* CORNER STAR */
-
 .corner-star {
-  position: absolute;
-
+  position: fixed; /* Changed from absolute */
   bottom: 40px;
-  right: 60px;
-
-  font-size: 22px;
-
-  color: #e0e0e0;
+  right: 80px;
+  font-size: 26px;
+  color: #e6e6e6;
+  z-index: 100;
 }
 
 /* RESPONSIVE */
-
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
   .hero-left h1 {
-    font-size: 80px;
+    font-size: 90px;
   }
-
   .umbrella {
-    width: 500px;
+    width: 600px;
   }
 }
 
@@ -237,25 +188,73 @@ body::after {
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    padding: 0 40px;
+  }
+
+  .nav {
+    left: 40px;
+    right: 40px;
+  }
+
+  .logo {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .nav-links {
+    display: none;
   }
 
   .hero-left {
     margin-bottom: 40px;
   }
 
-  .umbrella {
-    width: 420px;
+  .hero-left h1 {
+    font-size: 60px;
   }
 
-  .nav {
-    left: 30px;
-    right: 30px;
+  .umbrella {
+    width: 100%;
+    max-width: 420px;
   }
 }
 
-.umbrella {
-  width: 620px;
+/* --- ADD THESE NEW STYLES AT THE BOTTOM --- */
 
-  filter: drop-shadow(0px 60px 60px rgba(0, 0, 0, 0.18))
-    drop-shadow(0px 20px 25px rgba(0, 0, 0, 0.12));
+/* FEATURE SECTION */
+.feature-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 0 80px;
+  position: relative;
+}
+
+.feature-left {
+  max-width: 700px;
+  z-index: 2;
+}
+
+/* Matches the Hero Title styling exactly */
+.feature-left h2 {
+  font-family: var(--font-playfair), serif;
+  font-size: 115px;
+  line-height: 0.95;
+  letter-spacing: -2px;
+  color: #9c9c9c;
+  font-weight: 400;
+  margin-bottom: 24px;
+}
+
+.feature-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* Adjust width based on your actual transparent image size */
+.model-img {
+  width: 750px;
 }
