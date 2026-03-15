@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -21,7 +22,8 @@ const ProductShowcase = () => {
 
       {/* Background Ghost Images */}
       <div className={styles.ghostBackground}>
-        {/* <img
+        {/*
+        <img
           src="/umbrella-outline-left.png"
           className={styles.ghostLeft}
           alt=""
@@ -30,12 +32,13 @@ const ProductShowcase = () => {
           src="/umbrella-handle-right.png"
           className={styles.ghostRight}
           alt=""
-        /> */}
+        />
+        */}
       </div>
 
       {/* Main Content */}
       <div className={styles.mainContent}>
-        <div className={styles.textContent}>
+        <div>
           <h2 className={styles.seriesTitle}>
             SERIES 01: <br />
             <span>THE ÆTHER.</span>
@@ -56,26 +59,31 @@ const ProductShowcase = () => {
 
       {/* Footer */}
       <footer className={styles.footer}>
+        {/* Left Controls */}
         <div className={styles.leftControls}>
           <button className={styles.iconBtn}>
             <ChevronLeft size={20} />
           </button>
+
           <button className={`${styles.iconBtn} ${styles.activeBtn}`}>
             <ChevronRight size={20} />
           </button>
         </div>
 
+        {/* Caption */}
         <p className={styles.caption}>Fluid motion. Seamless protection.</p>
 
+        {/* Right Controls */}
         <div className={styles.rightControls}>
           <div className={styles.pagination}>
-            <span className={styles.dot}></span>
+            <span className={`${styles.dot} ${styles.activeDot}`}></span>
             <span className={styles.dot}></span>
             <span className={styles.dot}></span>
             <span className={styles.dot}></span>
             <span className={styles.dot}></span>
             <span className={styles.dot}></span>
           </div>
+
           <button className={styles.iconBtn}>
             <ChevronRight size={20} />
           </button>

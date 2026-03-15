@@ -36,7 +36,7 @@ export default function Home() {
       <ProductShowcase />
 
       {/* DECORATIVE STAR */}
-      <div className={styles.cornerStar}>✦</div>
+      {/* <div className={styles.cornerStar}>✦</div> */}
     </main>
   );
 }

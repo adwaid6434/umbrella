@@ -113,14 +113,14 @@ body::after {
 }
 
 /* CORNER STAR */
-.corner-star {
-  position: fixed; /* Changed from absolute */
+/* .corner-star {
+  position: fixed;
   bottom: 40px;
   right: 80px;
   font-size: 26px;
   color: #e6e6e6;
   z-index: 100;
-}
+} */
 
 /* RESPONSIVE */
 @media (max-width: 1400px) {
