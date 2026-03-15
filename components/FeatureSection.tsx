@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image"; // 1. Import the Image component
 
 export default function FeatureSection() {
   return (
@@ -30,11 +31,14 @@ export default function FeatureSection() {
       </div>
 
       <div className="feature-right">
-        {/* Image is static, so it just appears normally while scrolling */}
-        <img
-          src="/model-umbrella.png" /* Replace with your actual image name */
+        {/* 2. Use the Image component */}
+        <Image
+          src="/model-umbrella.png"
           alt="Model holding umbrella"
           className="model-img"
+          width={800} // 3. Add expected width
+          height={1200} // 4. Add expected height
+          priority // 5. Optional: adds high priority if this is at the top of the page
         />
       </div>
     </section>
