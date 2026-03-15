@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { ChevronLeft, ChevronRight, Menu } from "lucide-react";
+import Image from "next/image";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import styles from "./ProductShowcase.module.css";
 
 const ProductShowcase = () => {
@@ -13,15 +14,14 @@ const ProductShowcase = () => {
       viewport={{ once: true, amount: 0.2 }}
       className={styles.container}
     >
-      {/* Header / Nav Area */}
+      {/* Header */}
       <nav className={styles.nav}>
         <span className={styles.logo}>ÆTHER.UMBRELLA.</span>
-        {/* <Menu size={24} strokeWidth={1} /> */}
       </nav>
 
       {/* Background Ghost Images */}
       <div className={styles.ghostBackground}>
-        <img
+        {/* <img
           src="/umbrella-outline-left.png"
           className={styles.ghostLeft}
           alt=""
@@ -30,7 +30,7 @@ const ProductShowcase = () => {
           src="/umbrella-handle-right.png"
           className={styles.ghostRight}
           alt=""
-        />
+        /> */}
       </div>
 
       {/* Main Content */}
@@ -43,15 +43,18 @@ const ProductShowcase = () => {
         </div>
 
         <div className={styles.imageCard}>
-          <img
-            src="/main-umbrella.jpg"
+          <Image
+            src="/umbrella.png"
             alt="The Aether Umbrella"
+            width={500}
+            height={500}
             className={styles.productImg}
+            priority
           />
         </div>
       </div>
 
-      {/* Footer Controls */}
+      {/* Footer */}
       <footer className={styles.footer}>
         <div className={styles.leftControls}>
           <button className={styles.iconBtn}>
