@@ -271,3 +271,87 @@ body::after {
   align-self: flex-start;
   margin-top: 10px;
 }
+
+/* MOBILE-ONLY OVERRIDES */
+@media (max-width: 768px) {
+  /* Hero: stack vertically, tighter padding, readable typography */
+  .hero {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 16px;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .hero-left {
+    max-width: 100%;
+    margin-bottom: 32px;
+  }
+
+  .hero-left h1 {
+    font-size: 52px;
+    line-height: 1;
+  }
+
+  .sub {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 32px;
+  }
+
+  .hero-right {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .umbrella {
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  /* Feature section: stack vertically and scale typography/image */
+  .feature-section {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 48px 16px 64px;
+    height: auto;
+    min-height: 100vh;
+    text-align: center;
+    overflow-x: hidden;
+    gap: 32px;
+  }
+
+  .feature-left {
+    max-width: 100%;
+  }
+
+  .feature-left h2 {
+    font-size: 52px;
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+
+  .feature-right {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .model-img {
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    margin: 0 auto;
+  }
+}
+
+/* Mobile + reduced motion: future CSS motion overrides can be softened here
+   without affecting desktop or JS-based animations. */
+@media (max-width: 768px) and (prefers-reduced-motion: reduce) {
+  /* Placeholder for any CSS animation overrides; none added yet
+     to keep desktop and existing JS animations unchanged. */
+}

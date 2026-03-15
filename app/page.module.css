@@ -74,3 +74,20 @@
     display: none;
   }
 }
+
+/* MOBILE-ONLY NAVBAR OVERRIDES */
+@media (max-width: 768px) {
+  .nav {
+    top: 24px;
+    left: 16px;
+    right: 16px;
+  }
+
+  .logo {
+    font-size: 1.25rem;
+  }
+
+  .menuButton {
+    padding: 4px;
+  }
+}
